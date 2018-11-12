@@ -1,4 +1,4 @@
-let food_router = require("./food/food.controller");
+let food_router = require("./food");
 
 let create_app =(server)=>{
     server.use("/food",food_router);

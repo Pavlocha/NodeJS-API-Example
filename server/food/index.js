@@ -1,2 +1,3 @@
-const foodController = require("./food.controller");
+const foodRouter= require("./food.route");
 
+module.exports= foodRouter;
