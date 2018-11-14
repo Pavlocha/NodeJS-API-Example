@@ -1,12 +1,10 @@
 const express = require("express");
 const router  = express.Router();
-const food    = require("./food.services");/*this line calls the interface that contains all the operation possible */
+const food    = require("./food.services");/*this line calls the interface that contains all the operation possible*/
 
-router.get("/",(req,res)=>{
+router.get("/",async (req,res)=>{
     try{
-        let xo = food.find_all_food();
-        console.log(xo);
-        res.send( xo)/*https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await  */
+        res.send(await food.find_all_food());
     }catch(err){
         console.log(err);
     }

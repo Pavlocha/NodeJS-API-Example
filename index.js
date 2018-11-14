@@ -15,6 +15,13 @@ app.use(helmet());
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({ extended: true }));
 
+let dev_db_url = 'mongodb://localhost/test';
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 require("./server/app")(app);/*   Call the function we get from require and give it app as an argument    */
 
 app.use("/", async (req, res) => {

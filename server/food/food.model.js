@@ -8,7 +8,5 @@ let FoodSchema = new Schema({
     calories:   {type:  Number},
 
 });
-
-let mongo_food = mongoose.model('Food', FoodSchema);
-// Export the model
-module.exports = mongo_food;
+ // Export the model
+ module.exports = mongoose.model('Food', FoodSchema);
