@@ -5,8 +5,14 @@ const find_all_food     =   async ()=>{
     console.log(x);
     return x;
 }
+
 const add_food  =   (food)=>{
     return  food_dao.add_food(food);
 }
 
-module.exports = { find_all_food,   add_food};
+const delete_food   =(foodName)=>{
+    return  food_dao.delete_food(foodName);
+}
+
+
+module.exports = { find_all_food, add_food, delete_food};
