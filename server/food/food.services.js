@@ -15,4 +15,6 @@ const delete_food   =(foodName)=>{
 }
 
 
-module.exports = { find_all_food, add_food, delete_food};
+module.exports = { find_all_food,
+                   add_food,
+                   delete_food};
