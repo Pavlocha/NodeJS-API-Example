@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let FoodSchema = new Schema({
+let foodSchema = new Schema({
     name    :   {type:  String},
     dateProd:   {type:  Date},
     dateExp :   {type:  Date},
@@ -9,4 +9,4 @@ let FoodSchema = new Schema({
 
 });
  // Export the model
- module.exports = mongoose.model('Food', FoodSchema);
+ module.exports = mongoose.model('Food items', foodSchema);

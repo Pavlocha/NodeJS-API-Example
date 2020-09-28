@@ -1,20 +1,17 @@
-let food_dao = require("./food.dao");
+const foodDao = require("./food.dao");
 
-const find_all_food     =   async ()=>{
-    let x = await food_dao.get_all_food() ;
-    console.log(x);
-    return x;
-}
+const findFoods = async () => {
+  let x = await foodDao.getFoods();
+  console.log(x);
+  return x;
+};
 
-const add_food  =   (food)=>{
-    return  food_dao.add_food(food);
-}
+const addFood = (food) => {
+  return foodDao.addFood(food);
+};
 
-const delete_food   =(foodName)=>{
-    return  food_dao.delete_food(foodName);
-}
+const deleteFood = (foodName) => {
+  return foodDao.deleteFood(foodName);
+};
 
-
-module.exports = { find_all_food,
-                   add_food,
-                   delete_food};
+module.exports = { findFoods, addFood, deleteFood };

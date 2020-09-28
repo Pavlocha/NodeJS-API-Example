@@ -4,7 +4,7 @@ const food    = require("./food.services");/*this line calls the interface that 
 
 router.get("/",async (req, res)=>{
     try{
-        res.send(await food.find_all_food());
+        res.send(await food.findFoods());
     }catch(err){
         console.log(err);
     }
@@ -12,7 +12,7 @@ router.get("/",async (req, res)=>{
 
 router.post("/",(req, res)=>{
     try{console.log("this is the message " + req.body);
-        food.add_food(req.body);
+        food.addFood(req.body);
     }catch(err){
         console.log(err);
     }
@@ -21,7 +21,7 @@ router.post("/",(req, res)=>{
 
 router.delete("/",(req, res)=>{
     try{
-        food.delete_food(req.body.name);
+        food.deleteFood(req.body.name);
     }catch(err){
         console.log(err);
     }
